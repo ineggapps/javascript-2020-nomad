@@ -14,3 +14,12 @@ const bye = new Promise((resolve, reject) => {
 const thenFn = (value) => console.log(value);
 
 bye.then(thenFn);
+
+//----------
+
+const iloveyou = new Promise((resolve, reject) => {
+  setTimeout(reject, 3000, "Sorry...");
+});
+
+//오류는 catch메서드로 잡을 수 있음
+iloveyou.then((result) => console.log(result)).catch((value) => console.log(value));
